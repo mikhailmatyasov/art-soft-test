@@ -1,0 +1,72 @@
+$comment-width: 98%;
+$corner-radius: 10px;
+$padding-size: 10px;
+$comment-border: solid 2px #dddddd;
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .comment-body {
+    width: $comment-width;
+    border-radius: $corner-radius;
+    background-color: var(--light);
+
+    .comment-content {
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: $corner-radius $corner-radius 0 0;
+      border: $comment-border;
+
+      .comment-content-header {
+        width: 80%;
+        display: flex;
+
+        .comment-content-header-item {
+          padding: $padding-size;
+          border-right: $comment-border;
+          border-bottom: $comment-border;
+        }
+
+        .comment-content-header-author {
+        }
+
+        .comment-content-header-date {
+          border-radius: 0 0 $corner-radius 0;
+        }
+      }
+
+      .comment-content-button {
+        width: 20%;
+        border-radius: 0 $corner-radius 0 $corner-radius;
+        border: none;
+        outline: none;
+      }
+
+      .comment-content-body {
+        width: 100%;
+        padding: $padding-size;
+      }
+    }
+
+    .comment-replies {
+      display: flex;
+      flex-direction: column;
+      padding: $padding-size;
+
+      .comment-reply {
+        margin-top: 5px;
+        padding: $padding-size / 2;
+        border: $comment-border;
+        border-radius: $corner-radius;
+      }
+    }
+  }
+
+  .comment-children {
+    width: 100%;
+    margin-left: 100% - $comment-width;
+    margin-top: 10px;
+  }
+}

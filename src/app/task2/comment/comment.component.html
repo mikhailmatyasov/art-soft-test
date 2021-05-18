@@ -1,0 +1,18 @@
+<div class="comment-container">
+  <div class="comment-body">
+    <div class="comment-content">
+      <div class="comment-content-header">
+        <div class="comment-content-header-author comment-content-header-item">{{ data?.authorName }}</div>
+        <div class="comment-content-header-date comment-content-header-item">{{ data?.dateTime }}</div>
+      </div>
+      <button class="comment-content-button comment-content-header-item">Reply</button>
+      <div class="comment-content-body">{{ data?.body }}</div>
+  </div>
+    <div class="comment-replies">
+      <div class="comment-reply" *ngFor="let reply of data?.replies">{{ reply }}</div>
+    </div>
+  </div>
+  <div class="comment-children">
+    <comment *ngFor="let child of data?.children" [data]="child"></comment>
+  </div>
+</div>
