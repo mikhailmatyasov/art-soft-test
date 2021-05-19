@@ -10,5 +10,9 @@ export class CommentComponent {
 
     @Input() public data: CommentModel;
     constructor () {}
-  
+
+
+    onReply() {
+      this.data.replies.push ("");
+    }
 }

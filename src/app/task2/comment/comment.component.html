@@ -1,15 +1,15 @@
 <div class="comment-container">
-  <div class="comment-body">
-    <div class="comment-content">
-      <div class="comment-content-header">
+  <div class="container comment-body">
+    <div class="row comment-content">
+      <div class="col-9 comment-content-header">
         <div class="comment-content-header-author comment-content-header-item">{{ data?.authorName }}</div>
         <div class="comment-content-header-date comment-content-header-item">{{ data?.dateTime }}</div>
       </div>
-      <button class="comment-content-button comment-content-header-item">Reply</button>
-      <div class="comment-content-body">{{ data?.body }}</div>
+      <button (click)="onReply()" class="col-3 btn btn-outline-dark comment-content-button comment-content-header-item">Reply</button>
+      <div class="col-12 comment-content-body">{{ data?.body }}</div>
   </div>
-    <div class="comment-replies">
-      <div class="comment-reply" *ngFor="let reply of data?.replies">{{ reply }}</div>
+    <div *ngIf="data?.replies.length !== 0" class="comment-replies">
+      <reply class="comment-reply" *ngFor="let reply of data?.replies" [value]="reply"></reply>
     </div>
   </div>
   <div class="comment-children">
